@@ -37,4 +37,31 @@ const updateInDB = async()=>{
 
 
 }
-updateInDB()
+//updateInDB()
+
+
+//delete Method
+
+const deleteInDB = async()=>{
+
+    let Product = mongoose.model('products', ProductSchema)
+
+    let data = await Product.deleteOne({name:"fiza"})
+
+    console.log(data)
+
+}
+deleteInDB()
+
+
+
+//find Method
+
+const findInDB = async()=>{
+
+    let Product = mongoose.model('products', ProductSchema)
+    let data = await Product.find({name:"Shahil"})
+    console.log(data)
+}
+
+findInDB()
