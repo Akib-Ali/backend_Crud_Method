@@ -6,6 +6,19 @@ const mongoose = require("mongoose")
 
 
 app.use(express.json())
+
+// middleware part
+
+app.use((req,res,next)=>{
+
+    console.log("Http Method -" + req.method + ", URL - " + req.url)
+    next()
+
+})
+
+
+
+
 app.use("/users", userRouter);
 app.use('/note', noteRouter);
 
